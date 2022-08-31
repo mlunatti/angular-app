@@ -48,11 +48,11 @@ export class ItemService {
   }
 
   toggleCompleted(item:Item):Observable<any>{
-    return this.http.put(this.url + item.id,item, this.httpOptions);
+    return this.http.put(this.url + '/' + item.id,item, this.httpOptions);
   }
 
   deleteItem(item:Item):Observable<Item>{
-    return this.http.delete<Item>(this.url + item.id);
+    return this.http.delete<Item>(this.url + '/' + item.id);
   }
 
   addItem(item:Item):Observable<Item>{
